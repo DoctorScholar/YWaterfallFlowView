@@ -76,7 +76,7 @@ NS_CLASS_AVAILABLE_IOS(2_0) @interface JZWaterfallFlowViewController : UIScrollV
 
 @property (nonatomic, copy) NSString *identifier;
 
-- (id)initWithIdentifier:(NSString *)identifier __attribute__((objc_designated_initializer));
+- (id)initWithIdentifier:(NSString *)identifier;
 
 - (void)layoutSubviewsW;
 
