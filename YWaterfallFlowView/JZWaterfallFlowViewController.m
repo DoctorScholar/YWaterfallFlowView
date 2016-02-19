@@ -7,6 +7,7 @@
 //
 
 #import "JZWaterfallFlowViewController.h"
+#import "UIView+Category.h"
 
 @interface JZWaterfallFlowViewController ()
 
@@ -117,7 +118,7 @@
     [_dicEachColumnMaxBottom[@"0"] floatValue];
     NSUInteger MinColumn = 0;
     for (NSUInteger i = 1; i < _cloumnNumber; i ++) {
-        NSString *key = [NSString stringWithFormat:@"%d",i];
+        NSString *key = [NSString stringWithFormat:@"%lu",i];
         if ([_dicEachColumnMaxBottom[key] floatValue] < MinOfsset)
         {
             MinColumn = i;
@@ -132,7 +133,7 @@
     CGFloat MaxOfsset =
     [_dicEachColumnMaxBottom[@"0"] floatValue];
     for (NSUInteger i = 1; i < _cloumnNumber; i ++) {
-        NSString *key = [NSString stringWithFormat:@"%d",i];
+        NSString *key = [NSString stringWithFormat:@"%lu",i];
         if ([_dicEachColumnMaxBottom[key] floatValue] > MaxOfsset)
         {
             MaxOfsset = [_dicEachColumnMaxBottom[key] floatValue];
@@ -266,7 +267,7 @@
                 cell = [self.WDataSource waterfallFlow:self cellForRowAtIndex:i];
                 // set cell's frame.
                 NSUInteger currentColumn            = [self getCurrentColumn];
-                NSString *curentColumnKey           = [NSString stringWithFormat:@"%d",currentColumn];
+                NSString *curentColumnKey           = [NSString stringWithFormat:@"%lu",currentColumn];
                 CGFloat currentColumnLastMaxOffsetY = [_dicEachColumnMaxBottom[curentColumnKey] floatValue];
                 
                 if (_dicEachCellY[key]) {
