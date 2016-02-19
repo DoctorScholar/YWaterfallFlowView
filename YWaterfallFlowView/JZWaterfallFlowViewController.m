@@ -7,7 +7,6 @@
 //
 
 #import "JZWaterfallFlowViewController.h"
-#import "UIView+Category.h"
 
 @interface JZWaterfallFlowViewController ()
 
